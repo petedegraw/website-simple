@@ -1,23 +1,59 @@
 <html>
-    <head>
-        <style>
-            html, body {
-                height: 100%;
-            }
-            body {
-                margin: 0;
-            }
-            div {
-                height: 100%;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        </style>
-    </head>
-    <body>
-        <div style="font-size:100px;">😀</div>
-    </body>
+  <head>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      #emoji {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="emoji"
+      style="font-size: 190px"
+      title="hello"
+      onclick="changeEmoji()"
+    >
+      😀
+    </div>
+    <script>
+      let emojiArray = [
+        '😀',
+        '☕️',
+        '🍕',
+        '🖥',
+        '🌲',
+        '🥸',
+        '🍩',
+        '🌮',
+        '🥃',
+        '🍻',
+        '🧇',
+        '🥪',
+        '🕶',
+        '🌵',
+      ];
+      let emoji = document.getElementById('emoji');
+
+      function changeEmoji() {
+        let randomIndex = Math.floor(Math.random() * emojiArray.length);
+        emoji.innerHTML = emojiArray[randomIndex];
+      }
+      addEventListener('load', function () {
+        changeEmoji();
+      });
+    </script>
+  </body>
 </html>
